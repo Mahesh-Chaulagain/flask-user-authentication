@@ -1,0 +1,30 @@
+# Generate secret keys
+    python -c 'import secrets; print(secrets.token_hex())'
+
+# Authentication:
+-> uniquely identify the user and let them access the private information
+-> restrict access to certain part of the website
+
+# Encryption:
+-> scrambling something to make it secret
+-> requires a key to unscramble the secret
+-> Earliest way: Caesar Cipher -> letter substitution with how many letter to shift by
+-> password + key --> ciphertext
+-> Decryption:  password <-- key + ciphertext
+
+# Hashing
+-> use the hash function to convert password to hash and store that hash in the database
+-> impossible to convert hash back to password
+-> compares the hash when the user logins with the saved passwords
+
+# Salting
+-> generate a random set of gen and mix with users password to generate a strong hash
+-> increases the complexity and security
+-> store salt and hash
+-> password + salt --> hash
+
+# Bcrypt
+-> Hashing Algorithm
+-> strong security
+-> generate the hash based on salt rounds
+-> can set the number of rounds to salt the hash
